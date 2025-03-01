@@ -27,6 +27,7 @@ jobs:
         run: |
           VERSION=$(git describe --tags --abbrev=0 || echo "latest")
           echo "Version: $VERSION"
+          echo "::set-output name=version::$VERSION"
 
       - name: Build the Docker image
         run: |
